@@ -1,0 +1,6 @@
+{
+  "name": "Uhalegal",
+  "description": "A premium, minimalist immigration law website for Uhalegal, providing professional guidance for visas, ILR, and citizenship.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
