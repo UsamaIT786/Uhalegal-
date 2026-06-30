@@ -1,44 +1,36 @@
 import React from 'react';
-import blackLogo from '../assets/images/BLACK.png';
+import newLogo from '../assets/images/NEW_LOGO.png';
 
 interface LogoProps {
-  light?: boolean;
   className?: string;
   sizeMultiplier?: number;
+  // Keep props for compatibility
+  light?: boolean;
+  showText?: boolean;
 }
 
-export default function Logo({ light = false, className = '', sizeMultiplier = 1 }: LogoProps) {
+export default function Logo({ className = '', sizeMultiplier = 1 }: LogoProps) {
   // Base dimensions scaled by sizeMultiplier
-  const baseWidth = 100 * sizeMultiplier;
-  const baseHeight = 55 * sizeMultiplier;
-  const textColor = light ? '#FFFFFF' : '#1A1A2E';
+  const baseSize = 45 * sizeMultiplier;
   
   return (
     <div className={`flex flex-col items-center justify-center text-center select-none ${className}`}>
       <img
-        src={blackLogo}
+        src={newLogo}
         alt="Uhalegal"
         style={{ 
-          width: baseWidth, 
-          height: 'auto',
+          width: baseSize, 
+          height: baseSize,
           maxWidth: '100%',
-          filter: light ? 'invert(1)' : 'none',
-          transition: 'filter 300ms ease',
-          imageRendering: 'crisp-edges'
+          objectFit: 'contain',
+          backgroundColor: '#FFFFFF',
+          borderRadius: '4px',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+          imageRendering: '-webkit-optimize-contrast',
+          transform: 'translateZ(0)',
+          transition: 'all 300ms ease',
         }}
       />
-      
-      {/* Subtext with perfect letter spacing */}
-      <div 
-        className="uppercase tracking-[0.45em] font-sans font-bold transition-colors duration-300"
-        style={{ 
-          color: textColor,
-          fontSize: `${7.5 * sizeMultiplier}px`,
-          marginTop: `${2 * sizeMultiplier}px`
-        }}
-      >
-        U h a l e g a l
-      </div>
     </div>
   );
 }

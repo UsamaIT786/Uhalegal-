@@ -49,9 +49,9 @@ export default function Navbar({ activePage, onNavigate }: NavbarProps) {
         {/* Logo */}
         <button
           onClick={() => handleLinkClick('home')}
-          className="flex items-center focus:outline-none cursor-pointer"
+          className="flex items-center justify-center focus:outline-none cursor-pointer h-[54px] overflow-visible"
         >
-          <Logo light={!isScrolled} sizeMultiplier={0.7} />
+          <Logo light={!isScrolled} sizeMultiplier={1.6} />
         </button>
 
         {/* Desktop Navigation */}

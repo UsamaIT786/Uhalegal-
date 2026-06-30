@@ -5,20 +5,33 @@ interface CTABannerProps {
   title?: string;
   description?: string;
   buttonText?: string;
+  region?: 'UK' | 'PK';
 }
 
 export default function CTABanner({ 
   onNavigate, 
   image, 
   imageAlt = "CTA background", 
-  title = "Ready to Start Your UK Immigration Journey?", 
-  description = "Contact our specialist SRA-regulated immigration lawyers today. Let us simplify your application and secure your future in the UK.", 
-  buttonText = "Book Your Free Consultation" 
+  title, 
+  description, 
+  buttonText = "Book Your Free Consultation",
+  region = 'UK'
 }: CTABannerProps) {
   const handleAction = () => {
     onNavigate('contact');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const defaultTitle = region === 'PK' 
+    ? "Ready to Start Your Immigration Journey?" 
+    : "Ready to Start Your UK Immigration Journey?";
+
+  const defaultDesc = region === 'PK'
+    ? "Contact our specialist SRA-regulated immigration lawyers today. Let us simplify your application and secure your future."
+    : "Contact our specialist SRA-regulated immigration lawyers today. Let us simplify your application and secure your future in the UK.";
+
+  const finalTitle = title !== undefined ? title : defaultTitle;
+  const finalDesc = description !== undefined ? description : defaultDesc;
 
   return (
     <section
@@ -41,10 +54,10 @@ export default function CTABanner({
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-20">
         <h2 className="font-serif text-3xl md:text-5xl font-semibold tracking-tight text-gold mb-4">
-          {title}
+          {finalTitle}
         </h2>
         <p className="font-sans text-sm md:text-base text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8">
-          {description}
+          {finalDesc}
         </p>
         <button
           onClick={handleAction}

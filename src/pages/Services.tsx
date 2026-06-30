@@ -13,14 +13,100 @@ import { motion } from 'motion/react';
 
 interface ServicesProps {
   onNavigate: (page: string) => void;
+  region: 'UK' | 'PK';
 }
 
-export default function Services({ onNavigate }: ServicesProps) {
-  const services: Service[] = [
+export default function Services({ onNavigate, region }: ServicesProps) {
+  const services: Service[] = region === 'PK' ? [
     {
-      id: 'work-corporate',
-      title: 'Work & Corporate Visas',
-      description: 'The UK corporate immigration system can be notoriously challenging for employers and skilled workers alike. Our specialist corporate team works hand-in-hand with multi-national firms and solo founders, providing complete assistance on Skilled Worker visas, Global Talent pathways, Intra-Company transfers, and Innovator visas. We cover compliance checklists, fast-track processing options, and comprehensive advisory services.',
+      id: 'visit-visas',
+      title: 'Visit Visas',
+      description: 'Acquiring a UK Visit Visa from Pakistan can be challenging due to high refusal rates. The Home Office strictly scrutinizes family ties, financial status, and travel intent. Our specialist immigration lawyers guide you through gathering absolute proof of funds, source of wealth, and ties to Pakistan, ensuring your Tourist, Business, or Family Visitor application is SRA-compliant and robust.',
+      iconName: 'Compass',
+      subServices: [
+        'Standard Visitor Visa (Tourism & Leisure)',
+        'Family Visit (Sponsor & Invitation Clearance)',
+        'Business Visitor Visa (Conferences & Meetings)',
+        'Refusal Appraisal & Fast-track Reapplication'
+      ]
+    },
+    {
+      id: 'skilled-worker',
+      title: 'Skilled Worker Visas',
+      description: 'For professionals and skilled workers in Pakistan, relocating to the UK via employment is a life-changing opportunity. We assist you from job offer/CoS verification through to visa submission. We cover salary threshold compliance, English language certifications, and TB clinic coordination, ensuring a seamless transition under the Skilled Worker or Health and Care Worker routes.',
+      iconName: 'Briefcase',
+      subServices: [
+        'Skilled Worker Visa Application',
+        'Health and Care Worker Visa',
+        'Global Talent & Tech Nation Endorsement',
+        'Relocation & Family Dependent Visas'
+      ]
+    },
+    {
+      id: 'spouse-family',
+      title: 'Spouse and Family Visas',
+      description: 'Reuniting with your spouse or partner in the UK requires satisfying strict financial thresholds, English language criteria, and adequate accommodation tests. We specialize in assisting applicants from Pakistan, providing comprehensive checklists for salary verification, bank statement format audits, and genuine relationship proof to secure entry clearance.',
+      iconName: 'Users',
+      subServices: [
+        'Spouse Entry Clearance (UK Sponsor)',
+        'Fiancé(e) & Proposed Partner Visas',
+        'Unmarried Partner Applications',
+        'Family Settlement & Dependent Visas'
+      ]
+    },
+    {
+      id: 'ilr-citizenship',
+      title: 'Indefinite Leave to Remain and Citizenship',
+      description: 'For Pakistani nationals residing in the UK, obtaining Indefinite Leave to Remain (ILR) and British Citizenship is the final milestone. We review continuous residency requirements, absence thresholds, Life in the UK test certificates, and good character assessments. We guide you through the transition to permanent settlement and acquiring a British passport.',
+      iconName: 'ShieldCheck',
+      subServices: [
+        '5-Year Work or Partner ILR Settlement',
+        '10-Year Long Residence Continuous presence',
+        'Naturalisation as a British Citizen (Adults)',
+        'Registration of Minor Children & Passports'
+      ]
+    },
+    {
+      id: 'sponsor-license',
+      title: 'Sponsor Licenses',
+      description: 'UK entities owned by Pakistani entrepreneurs or organizations looking to establish a branch in the UK must obtain a Sponsor License to recruit talent. We handle initial license applications, guide you on the SMS portal, prepare key personnel, and provide compliance audits to guarantee SRA compliance and minimize revocation risks.',
+      iconName: 'Building',
+      subServices: [
+        'Sponsor License Application & Evidence',
+        'SMS Portal Setup & ongoing management',
+        'Compliance Audits & Mock Assessments',
+        'Key Personnel Training & SMS Guidance'
+      ]
+    },
+    {
+      id: 'appeals-judicial',
+      title: 'Appeals & Judicial Review',
+      description: 'Receiving a visa refusal in Pakistan can be devastating. Our litigation team acts swiftly to assess refusal letters and build robust appeals. We draft Pre-Action Protocol letters, represent you in Administrative Reviews, and provide elite representation before UK Immigration Tribunals to challenge incorrect Home Office decisions.',
+      iconName: 'Scale',
+      subServices: [
+        'Refusal Assessment & Merit Evaluation',
+        'Out-of-Country Administrative Reviews',
+        'First-tier Tribunal Appeals representation',
+        'Pre-Action Protocols & Judicial Reviews'
+      ]
+    }
+  ] : [
+    {
+      id: 'visit-visas',
+      title: 'Visit Visas',
+      description: 'Navigating the UK visitor visa category requires satisfying entry clearance officers that you have genuine intentions to visit, sufficient funds, and will return. We assist corporate visitors, tourists, and family members seeking standard visitor visas. We prepare comprehensive document dossiers to present a clean, compliant application.',
+      iconName: 'Compass',
+      subServices: [
+        'Standard Visitor Visas (Tourism/Family)',
+        'Business Visitor Visas',
+        'Permitted Paid Engagements',
+        'Visitor Refusal Appraisals & Appeals'
+      ]
+    },
+    {
+      id: 'skilled-worker',
+      title: 'Skilled Worker Visas',
+      description: 'The UK corporate immigration system is complex for both sponsors and workers. Our specialist corporate team works hand-in-hand with multi-national firms and solo founders, providing complete assistance on Skilled Worker visas, Global Talent pathways, Intra-Company transfers, and Innovator visas. We cover compliance checklists, fast-track processing, and SRA-regulated advice.',
       iconName: 'Briefcase',
       subServices: [
         'Skilled Worker & Health & Care Visas',
@@ -31,8 +117,8 @@ export default function Services({ onNavigate }: ServicesProps) {
     },
     {
       id: 'spouse-family',
-      title: 'Spouse & Family Visas',
-      description: 'Rejoining or settling with your family members in the UK requires satisfying complex and shifting financial, housing, and English language thresholds. We offer precise guidance on Spouse Visa applications, Unmarried Partner approvals, Fiancé entries, and Adult Dependent Relative matters. Our focus is ensuring your proof and documentation are compiled meticulously to satisfy entry criteria on the first attempt.',
+      title: 'Spouse and Family Visas',
+      description: 'Rejoining or settling with family members in the UK requires satisfying complex and shifting financial, housing, and English language thresholds. We offer precise guidance on Spouse Visa applications, Unmarried Partner approvals, Fiancé entries, and Adult Dependent Relative matters. Our focus is ensuring your proof and documentation are compiled meticulously to satisfy entry criteria on the first attempt.',
       iconName: 'Users',
       subServices: [
         'Spouse & Civil Partner Entry Clearance',
@@ -42,32 +128,20 @@ export default function Services({ onNavigate }: ServicesProps) {
       ]
     },
     {
-      id: 'ilr',
-      title: 'Indefinite Leave to Remain (ILR)',
-      description: 'Achieving permanent residency in the UK (Settlement) is a critical milestone on the path to full citizenship. We guide clients through the intricate process of submitting successful Indefinite Leave to Remain (ILR) applications. Whether you are applying under the 5-year corporate work path, the family/partner settlement track, or the 10-year long residence continuous service path, we audit your continuous presence requirements thoroughly.',
+      id: 'ilr-citizenship',
+      title: 'Indefinite Leave to Remain and Citizenship',
+      description: 'Achieving permanent residency in the UK (Settlement) and subsequently securing British Citizenship are critical milestones on your path to integration. We guide clients through continuous presence audits, absence threshold checks, Life in the UK test preparation, and good character assessments, supporting you up to passport acquisition.',
       iconName: 'ShieldCheck',
       subServices: [
-        '5-Year Work Settlement (Skilled Worker/Global Talent)',
-        '10-Year Long Residence Continuous Presence path',
-        'Family & Partner settlement routes',
-        'Absence threshold auditing & continuous stay waivers'
-      ]
-    },
-    {
-      id: 'citizenship',
-      title: 'British Citizenship & Passports',
-      description: 'The final step of your relocation journey is securing British Citizenship and naturalisation. We handle complete citizenship registrations for adults and children, reviewing good character requirements, residence absences, and proof of passing the Life in the UK and English language components. We coordinate with local councils and handle post-approval passport applications.',
-      iconName: 'Award',
-      subServices: [
+        '5-Year Work or Family ILR Settlement',
+        '10-Year Long Residence Continuous Presence',
         'Naturalisation as a British Citizen (Adults)',
-        'Registration of Minor Children as British Citizens',
-        'Dual Nationality & Crown Service advice',
-        'First-time British Passport applications'
+        'Minor Children Registration & Passports'
       ]
     },
     {
-      id: 'sponsor-licence',
-      title: 'Sponsor Licence Applications',
+      id: 'sponsor-license',
+      title: 'Sponsor Licenses',
       description: 'To legally hire international staff, UK businesses must secure and maintain an active Sponsor Licence from the Home Office. We help brands of all sizes apply for, manage, and defend their sponsor licences. We provide mock audits to prepare your internal team for Home Office visits, train key personnel on the Sponsor Management System (SMS), and offer continuous compliance guidance.',
       iconName: 'Building',
       subServices: [
@@ -79,7 +153,7 @@ export default function Services({ onNavigate }: ServicesProps) {
     },
     {
       id: 'appeals-judicial',
-      title: 'Immigration Appeals & Refusals',
+      title: 'Appeals & Judicial Review',
       description: 'Receiving a Home Office refusal is stressful and time-sensitive. Our experienced litigation lawyers provide urgent assessments of refusal letters. We represent you during Administrative Reviews, Appeals at the First-tier and Upper-tier Tribunals, and handle Judicial Review pre-action protocols. We build robust evidence bundles to challenge negative decisions successfully.',
       iconName: 'Scale',
       subServices: [
@@ -92,11 +166,11 @@ export default function Services({ onNavigate }: ServicesProps) {
   ];
 
   const serviceImages: Record<string, string> = {
-    'work-corporate': serviceCorpVisas,
+    'visit-visas': serviceBritishCitizenship,
+    'skilled-worker': serviceCorpVisas,
     'spouse-family': serviceFamilyVisas,
-    'ilr': serviceIlrResidence,
-    'citizenship': serviceBritishCitizenship,
-    'sponsor-licence': serviceSponsorLicence,
+    'ilr-citizenship': serviceIlrResidence,
+    'sponsor-license': serviceSponsorLicence,
     'appeals-judicial': serviceAppealsLaw,
   };
 
@@ -222,7 +296,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       </section>
 
       {/* Reusable CTABanner */}
-      <CTABanner onNavigate={onNavigate} image={servicesHeroBg} imageAlt="Immigration services" />
+      <CTABanner onNavigate={onNavigate} image={servicesHeroBg} imageAlt={region === 'PK' ? "Immigration services" : "UK immigration services"} region={region} />
     </div>
   );
 }

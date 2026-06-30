@@ -4,9 +4,10 @@ import contactHeroBg from '../assets/images/contact_hero_bg_1782477311980.jpg';
 
 interface ContactProps {
   onNavigate: (page: string) => void;
+  region: 'UK' | 'PK';
 }
 
-export default function Contact({ onNavigate }: ContactProps) {
+export default function Contact({ onNavigate, region }: ContactProps) {
   return (
     <div id="contact-page" className="flex-grow">
       {/* Page Hero & Breadcrumbs */}
@@ -24,7 +25,7 @@ export default function Contact({ onNavigate }: ContactProps) {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
           <h1 className="font-serif text-4xl md:text-5xl font-semibold tracking-tight text-white mb-3">
-            Contact Us
+            {region === 'PK' ? 'Contact Our Global Offices' : 'Contact Us'}
           </h1>
           
           {/* Breadcrumb Navigation */}
@@ -72,7 +73,7 @@ export default function Contact({ onNavigate }: ContactProps) {
                     </div>
                     <div>
                       <h4 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-1">
-                        London Office
+                        London Headquarters
                       </h4>
                       <p className="font-sans text-sm text-gray-500 leading-relaxed">
                         100 Pall Mall, St. James's,<br />
@@ -80,6 +81,24 @@ export default function Contact({ onNavigate }: ContactProps) {
                       </p>
                     </div>
                   </div>
+
+                  {region === 'PK' && (
+                    /* Pakistan Liaison Hubs address */
+                    <div className="flex items-start space-x-4">
+                      <div className="h-10 w-10 bg-navy text-gold rounded-none flex items-center justify-center flex-shrink-0 border border-gold/20 shadow-sm">
+                        <MapPin className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h4 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-1">
+                          Pakistan Liaison Hubs
+                        </h4>
+                        <p className="font-sans text-sm text-gray-500 leading-relaxed">
+                          Islamabad & Lahore, Pakistan<br />
+                          <span className="text-[11px] text-gray-400">Document Verification & TB Clinic Coordination</span>
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Email */}
                   <div className="flex items-start space-x-4">

@@ -1,4 +1,4 @@
-import { ArrowRight, Briefcase, ShieldCheck, Award, Users, Building, Scale } from 'lucide-react';
+import { ArrowRight, Briefcase, ShieldCheck, Award, Users, Building, Scale, Compass } from 'lucide-react';
 import { Service } from '../types';
 import { motion } from 'motion/react';
 
@@ -14,6 +14,8 @@ export default function ServiceCard({ service, onNavigate, index = 0 }: ServiceC
   const renderIcon = (name: string) => {
     const iconProps = { className: "h-8 w-8 text-gold flex-shrink-0 mb-4 transition-transform duration-300 group-hover:scale-110" };
     switch (name) {
+      case 'Compass':
+        return <Compass {...iconProps} />;
       case 'Briefcase':
         return <Briefcase {...iconProps} />;
       case 'ShieldCheck':

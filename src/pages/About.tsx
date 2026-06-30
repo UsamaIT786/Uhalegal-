@@ -8,9 +8,10 @@ import aboutIntroImg from '../assets/images/about_intro_img_1782477331142.jpg';
 
 interface AboutProps {
   onNavigate: (page: string) => void;
+  region: 'UK' | 'PK';
 }
 
-export default function About({ onNavigate }: AboutProps) {
+export default function About({ onNavigate, region }: AboutProps) {
   const values: ValueCardProps[] = [
     {
       number: '01',
@@ -20,7 +21,9 @@ export default function About({ onNavigate }: AboutProps) {
     {
       number: '02',
       title: 'Expertise',
-      description: 'UK immigration law undergoes constant revisions. Our specialists dedicate substantial focus to auditing Home Office changes, ensuring our filings leverage modern precedents and maximum technical accuracy.',
+      description: region === 'PK'
+        ? 'Immigration law undergoes constant revisions. Our specialists dedicate substantial focus to auditing latest policy changes, ensuring our filings leverage modern precedents and maximum technical accuracy.'
+        : 'UK immigration law undergoes constant revisions. Our specialists dedicate substantial focus to auditing Home Office changes, ensuring our filings leverage modern precedents and maximum technical accuracy.',
     },
     {
       number: '03',
@@ -106,7 +109,7 @@ export default function About({ onNavigate }: AboutProps) {
             >
               <img
                 src={aboutIntroImg}
-                alt="Uhalegal Established London, UK"
+                alt={region === 'PK' ? "Uhalegal Established in Pakistan" : "Uhalegal Established London, UK"}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
@@ -115,7 +118,7 @@ export default function About({ onNavigate }: AboutProps) {
                   Uhalegal
                 </span>
                 <span className="font-sans text-[10px] font-bold uppercase tracking-widest text-gold block">
-                  Established London, UK
+                  {region === 'PK' ? "Established in Pakistan" : "Established London, UK"}
                 </span>
               </div>
             </motion.div>
@@ -132,10 +135,12 @@ export default function About({ onNavigate }: AboutProps) {
                 Who We Are
               </span>
               <h2 className="font-serif text-3xl md:text-4xl font-semibold text-navy">
-                Dedicated UK Immigration Advocates
+                {region === 'PK' ? "Dedicated Immigration Advocates" : "Dedicated UK Immigration Advocates"}
               </h2>
               <p className="font-sans text-sm md:text-base text-gray-600 leading-relaxed">
-                Founded with a mission to simplify the complex landscape of UK immigration law, Uhalegal represents a standard of modern, direct, and results-driven legal advocacy. We specialize solely in immigration, allowing our legal scholars to possess unmatched depth in corporate sponsorship, family resettlement, and citizenship criteria.
+                {region === 'PK' 
+                  ? "Founded with a mission to simplify the complex landscape of immigration law, Uhalegal represents a standard of modern, direct, and results-driven legal advocacy. We specialize solely in immigration, allowing our legal scholars to possess unmatched depth in corporate sponsorship, family resettlement, and citizenship criteria."
+                  : "Founded with a mission to simplify the complex landscape of UK immigration law, Uhalegal represents a standard of modern, direct, and results-driven legal advocacy. We specialize solely in immigration, allowing our legal scholars to possess unmatched depth in corporate sponsorship, family resettlement, and citizenship criteria."}
               </p>
               <p className="font-sans text-sm md:text-base text-gray-600 leading-relaxed">
                 We act as strategic partners to corporate clients seeking global talent, and caring guides for individuals reuniting with families. Our SRA-regulated status guarantees total regulatory accountability and adherence to the highest standards of professional ethics in the legal industry.
@@ -237,7 +242,7 @@ export default function About({ onNavigate }: AboutProps) {
       </section>
 
       {/* Reusable CTABanner */}
-      <CTABanner onNavigate={onNavigate} image={aboutIntroImg} imageAlt="About Uhalegal" />
+      <CTABanner onNavigate={onNavigate} image={aboutIntroImg} imageAlt="About Uhalegal" region={region} />
     </div>
   );
 }

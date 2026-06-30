@@ -8,10 +8,33 @@ import servicesHeroBg from '../assets/images/services_hero_bg_1782477267231.jpg'
 
 interface HeroSectionProps {
   onNavigate: (page: string) => void;
+  region: 'UK' | 'PK';
 }
 
-export default function HeroSection({ onNavigate }: HeroSectionProps) {
-  const slides = [
+export default function HeroSection({ onNavigate, region }: HeroSectionProps) {
+  const slides = region === 'PK' ? [
+    {
+      id: 0,
+      image: homeHeroBg,
+      tag: "SRA Regulated Immigration Firm for Pakistan",
+      title: "UK Immigration from Pakistan. Expert Representation.",
+      desc: "Direct SRA-regulated UK legal advice and local document verification from our Islamabad and Lahore hubs to ensure a refusal-free visa application.",
+    },
+    {
+      id: 1,
+      image: aboutHeroBg,
+      tag: "UK Spouse, Family & Settlement Visas",
+      title: "Spouse & Family Visas from Pakistan.",
+      desc: "Reuniting families with complete document verification and financial audit support to satisfy strict Home Office spouse visa entry clearance requirements.",
+    },
+    {
+      id: 2,
+      image: servicesHeroBg,
+      tag: "Sponsor Licences & Global Talent",
+      title: "Work & Relocation Pathways to the UK.",
+      desc: "Detailed guidance for high-value workers, tech leaders, and corporate sponsors under SRA-regulated legal supervision.",
+    }
+  ] : [
     {
       id: 0,
       image: homeHeroBg,

@@ -3,9 +3,10 @@ import Logo from './Logo';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
+  region: 'UK' | 'PK';
 }
 
-export default function Footer({ onNavigate }: FooterProps) {
+export default function Footer({ onNavigate, region }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   const handleLinkClick = (pageId: string) => {
@@ -27,7 +28,9 @@ export default function Footer({ onNavigate }: FooterProps) {
               <Logo light={true} sizeMultiplier={1.0} className="!items-start" />
             </button>
             <p className="text-gray-400 font-sans text-sm leading-relaxed max-w-sm">
-              Providing premium, precise legal counsel for UK immigration. We navigate the complexities of corporate, family, and citizenship visa laws to deliver seamless client success.
+              {region === 'PK'
+                ? 'Providing premium, precise legal counsel for immigration. We navigate the complexities of corporate, family, and citizenship visa laws to deliver seamless client success.'
+                : 'Providing premium, precise legal counsel for UK immigration. We navigate the complexities of corporate, family, and citizenship visa laws to deliver seamless client success.'}
             </p>
             <div className="pt-2 text-xs text-gold font-sans font-medium uppercase tracking-wider">
               SRA Regulated · Certified Specialists
@@ -142,22 +145,45 @@ export default function Footer({ onNavigate }: FooterProps) {
               Contact Info
             </h3>
             <ul className="space-y-3 font-sans text-sm text-gray-300">
-              <li className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 text-gold mt-1 flex-shrink-0" />
-                <span>100 Pall Mall, St. James's, London SW1Y 5NQ, UK</span>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-gold flex-shrink-0" />
-                <a href="tel:+442079460192" className="hover:text-gold transition-colors duration-200">
-                  +44 (0) 20 7946 0192
-                </a>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Mail className="h-4 w-4 text-gold flex-shrink-0" />
-                <a href="mailto:info@uhalegal.co.uk" className="hover:text-gold transition-colors duration-200">
-                  info@uhalegal.co.uk
-                </a>
-              </li>
+              {region === 'PK' ? (
+                <>
+                  <li className="flex items-start space-x-2">
+                    <MapPin className="h-4 w-4 text-gold mt-1 flex-shrink-0" />
+                    <span>Islamabad & Lahore, Pakistan</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Phone className="h-4 w-4 text-gold flex-shrink-0" />
+                    <a href="tel:+92511234567" className="hover:text-gold transition-colors duration-200">
+                      +92 (0) 51 123 4567
+                    </a>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Mail className="h-4 w-4 text-gold flex-shrink-0" />
+                    <a href="mailto:info@uhalegal.com" className="hover:text-gold transition-colors duration-200">
+                      info@uhalegal.com
+                    </a>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="flex items-start space-x-2">
+                    <MapPin className="h-4 w-4 text-gold mt-1 flex-shrink-0" />
+                    <span>100 Pall Mall, St. James's, London SW1Y 5NQ, UK</span>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Phone className="h-4 w-4 text-gold flex-shrink-0" />
+                    <a href="tel:+442079460192" className="hover:text-gold transition-colors duration-200">
+                      +44 (0) 20 7946 0192
+                    </a>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Mail className="h-4 w-4 text-gold flex-shrink-0" />
+                    <a href="mailto:info@uhalegal.co.uk" className="hover:text-gold transition-colors duration-200">
+                      info@uhalegal.co.uk
+                    </a>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 
