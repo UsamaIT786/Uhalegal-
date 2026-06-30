@@ -27,8 +27,8 @@ export default function CTABanner({
     : "Ready to Start Your UK Immigration Journey?";
 
   const defaultDesc = region === 'PK'
-    ? "Contact our specialist SRA-regulated immigration lawyers today. Let us simplify your application and secure your future."
-    : "Contact our specialist SRA-regulated immigration lawyers today. Let us simplify your application and secure your future in the UK.";
+    ? "Contact our specialist immigration lawyers today. Let us simplify your application and secure your future."
+    : "Contact our specialist immigration lawyers today. Let us simplify your application and secure your future in the UK.";
 
   const finalTitle = title !== undefined ? title : defaultTitle;
   const finalDesc = description !== undefined ? description : defaultDesc;

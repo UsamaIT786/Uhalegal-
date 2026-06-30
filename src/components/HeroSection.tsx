@@ -16,9 +16,9 @@ export default function HeroSection({ onNavigate, region }: HeroSectionProps) {
     {
       id: 0,
       image: homeHeroBg,
-      tag: "SRA Regulated Immigration Firm for Pakistan",
+      tag: "Immigration Firm for Pakistan",
       title: "UK Immigration from Pakistan. Expert Representation.",
-      desc: "Direct SRA-regulated UK legal advice and local document verification from our Islamabad and Lahore hubs to ensure a refusal-free visa application.",
+      desc: "Direct UK legal advice and local document verification from our Lahore hub to ensure a refusal-free visa application.",
     },
     {
       id: 1,
@@ -32,13 +32,13 @@ export default function HeroSection({ onNavigate, region }: HeroSectionProps) {
       image: servicesHeroBg,
       tag: "Sponsor Licences & Global Talent",
       title: "Work & Relocation Pathways to the UK.",
-      desc: "Detailed guidance for high-value workers, tech leaders, and corporate sponsors under SRA-regulated legal supervision.",
+      desc: "Detailed guidance for high-value workers, tech leaders, and corporate sponsors under expert legal supervision.",
     }
   ] : [
     {
       id: 0,
       image: homeHeroBg,
-      tag: "SRA Regulated Immigration Firm",
+      tag: "",
       title: "Expert Immigration Law. Simplified.",
       desc: "Providing precise pathways and elite representation for individual, family, and corporate visa matters across the United Kingdom.",
     },
@@ -54,7 +54,7 @@ export default function HeroSection({ onNavigate, region }: HeroSectionProps) {
       image: servicesHeroBg,
       tag: "Premium Sponsor Licences & HR Compliance",
       title: "Global Corporate & Business Mobility.",
-      desc: "Helping UK employers secure and manage SRA-compliant Sponsor Licences to recruit elite global talent and navigate corporate regulations seamlessly.",
+      desc: "Helping UK employers secure and manage compliant Sponsor Licences to recruit elite global talent and navigate corporate regulations seamlessly.",
     }
   ];
 
@@ -85,7 +85,7 @@ export default function HeroSection({ onNavigate, region }: HeroSectionProps) {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <motion.img
           src={homeHeroBg}
-          alt="Uhalegal London Head Office"
+          alt="Uhalegal Head Office"
           initial={{ scale: 1.03 }}
           animate={{ scale: 1.0 }}
           transition={{ duration: 20.0, ease: "easeInOut", repeat: Infinity, repeatType: "reverse" }}
@@ -179,11 +179,7 @@ export default function HeroSection({ onNavigate, region }: HeroSectionProps) {
 
         {/* Trust Badges */}
         <div className="border-t border-white/10 pt-8 w-full max-w-3xl">
-          <div className="grid grid-cols-3 gap-2 sm:gap-6">
-            <div className="flex items-center justify-center space-x-1.5 sm:space-x-3 text-white/90">
-              <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-gold flex-shrink-0" />
-              <span className="font-sans text-[11px] sm:text-sm font-semibold tracking-wide">SRA Regulated</span>
-            </div>
+          <div className="grid grid-cols-2 gap-2 sm:gap-6 max-w-xl mx-auto">
             <div className="flex items-center justify-center space-x-1.5 sm:space-x-3 text-white/90">
               <CheckCircle className="h-4 w-4 sm:h-5 sm:w-5 text-gold flex-shrink-0" />
               <span className="font-sans text-[11px] sm:text-sm font-semibold tracking-wide">Confidential</span>

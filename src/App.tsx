@@ -183,7 +183,11 @@ export default function App() {
       )}
 
       {/* Sticky Top Bar */}
-      <Navbar activePage={currentPage} onNavigate={handleNavigate} />
+      <Navbar
+        activePage={currentPage}
+        onNavigate={handleNavigate}
+        onBackToOfficeSelection={() => setSelectedRegion(null)}
+      />
 
       {/* Main Content Stage */}
       <main className="flex-grow flex flex-col w-full animate-fade-in">

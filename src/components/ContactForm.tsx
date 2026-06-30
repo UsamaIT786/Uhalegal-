@@ -4,18 +4,18 @@ export default function ContactForm() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [visaType, setVisaType] = useState('work');
+  const [visaType, setVisaType] = useState('visit');
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState('');
 
   const visaOptions = [
-    { value: 'work', label: 'Skilled Worker & Corporate Visas' },
-    { value: 'spouse', label: 'Spouse / Unmarried Partner Visas' },
-    { value: 'ilr', label: 'Indefinite Leave to Remain (ILR)' },
-    { value: 'citizenship', label: 'British Citizenship' },
-    { value: 'sponsor', label: 'Sponsor Licence Application' },
-    { value: 'other', label: 'Other Immigration Matters' },
+    { value: 'visit', label: 'Visit Visas' },
+    { value: 'skilled-worker', label: 'Skilled Worker Visas' },
+    { value: 'spouse-family', label: 'Spouse and Family Visas' },
+    { value: 'ilr-citizenship', label: 'Indefinite Leave to Remain and Citizenship' },
+    { value: 'sponsor-licenses', label: 'Sponsor Licenses' },
+    { value: 'appeals-review', label: 'Appeals & Judicial Review' },
   ];
 
   const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -61,7 +61,7 @@ export default function ContactForm() {
             setName('');
             setEmail('');
             setPhone('');
-            setVisaType('work');
+            setVisaType('visit');
             setMessage('');
             setSubmitted(false);
           }}

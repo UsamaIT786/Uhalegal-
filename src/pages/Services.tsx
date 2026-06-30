@@ -21,7 +21,7 @@ export default function Services({ onNavigate, region }: ServicesProps) {
     {
       id: 'visit-visas',
       title: 'Visit Visas',
-      description: 'Acquiring a UK Visit Visa from Pakistan can be challenging due to high refusal rates. The Home Office strictly scrutinizes family ties, financial status, and travel intent. Our specialist immigration lawyers guide you through gathering absolute proof of funds, source of wealth, and ties to Pakistan, ensuring your Tourist, Business, or Family Visitor application is SRA-compliant and robust.',
+      description: 'Acquiring a UK Visit Visa from Pakistan can be challenging due to high refusal rates. The Home Office strictly scrutinizes family ties, financial status, and travel intent. Our specialist immigration lawyers guide you through gathering absolute proof of funds, source of wealth, and ties to Pakistan, ensuring your Tourist, Business, or Family Visitor application is compliant and robust.',
       iconName: 'Compass',
       subServices: [
         'Standard Visitor Visa (Tourism & Leisure)',
@@ -69,7 +69,7 @@ export default function Services({ onNavigate, region }: ServicesProps) {
     {
       id: 'sponsor-license',
       title: 'Sponsor Licenses',
-      description: 'UK entities owned by Pakistani entrepreneurs or organizations looking to establish a branch in the UK must obtain a Sponsor License to recruit talent. We handle initial license applications, guide you on the SMS portal, prepare key personnel, and provide compliance audits to guarantee SRA compliance and minimize revocation risks.',
+      description: 'UK entities owned by Pakistani entrepreneurs or organizations looking to establish a branch in the UK must obtain a Sponsor License to recruit talent. We handle initial license applications, guide you on the SMS portal, prepare key personnel, and provide compliance audits to guarantee compliance and minimize revocation risks.',
       iconName: 'Building',
       subServices: [
         'Sponsor License Application & Evidence',
@@ -106,7 +106,7 @@ export default function Services({ onNavigate, region }: ServicesProps) {
     {
       id: 'skilled-worker',
       title: 'Skilled Worker Visas',
-      description: 'The UK corporate immigration system is complex for both sponsors and workers. Our specialist corporate team works hand-in-hand with multi-national firms and solo founders, providing complete assistance on Skilled Worker visas, Global Talent pathways, Intra-Company transfers, and Innovator visas. We cover compliance checklists, fast-track processing, and SRA-regulated advice.',
+      description: 'The UK corporate immigration system is complex for both sponsors and workers. Our specialist corporate team works hand-in-hand with multi-national firms and solo founders, providing complete assistance on Skilled Worker visas, Global Talent pathways, Intra-Company transfers, and Innovator visas. We cover compliance checklists, fast-track processing, and regulated advice.',
       iconName: 'Briefcase',
       subServices: [
         'Skilled Worker & Health & Care Visas',

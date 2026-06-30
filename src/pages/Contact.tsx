@@ -73,47 +73,51 @@ export default function Contact({ onNavigate, region }: ContactProps) {
                     </div>
                     <div>
                       <h4 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-1">
-                        London Headquarters
+                        Manchester Office
                       </h4>
                       <p className="font-sans text-sm text-gray-500 leading-relaxed">
-                        100 Pall Mall, St. James's,<br />
-                        London SW1Y 5NQ, United Kingdom
+                        400 Cheetham Hill Road,<br />
+                        Manchester M9 8LE, United Kingdom
                       </p>
                     </div>
                   </div>
 
-                  {region === 'PK' && (
-                    /* Pakistan Liaison Hubs address */
-                    <div className="flex items-start space-x-4">
-                      <div className="h-10 w-10 bg-navy text-gold rounded-none flex items-center justify-center flex-shrink-0 border border-gold/20 shadow-sm">
-                        <MapPin className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <h4 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-1">
-                          Pakistan Liaison Hubs
-                        </h4>
-                        <p className="font-sans text-sm text-gray-500 leading-relaxed">
-                          Islamabad & Lahore, Pakistan<br />
-                          <span className="text-[11px] text-gray-400">Document Verification & TB Clinic Coordination</span>
-                        </p>
-                      </div>
+                  {/* Lahore Office */}
+                  <div className="flex items-start space-x-4">
+                    <div className="h-10 w-10 bg-navy text-gold rounded-none flex items-center justify-center flex-shrink-0 border border-gold/20 shadow-sm">
+                      <MapPin className="h-5 w-5" />
                     </div>
-                  )}
+                    <div>
+                      <h4 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-1">
+                        Lahore Office
+                      </h4>
+                      <p className="font-sans text-sm text-gray-500 leading-relaxed">
+                        508 High Q Tower, Jail Road,<br />
+                        Gulberg, Lahore, Pakistan
+                      </p>
+                    </div>
+                  </div>
 
                   {/* Email */}
                   <div className="flex items-start space-x-4">
                     <div className="h-10 w-10 bg-navy text-gold rounded-none flex items-center justify-center flex-shrink-0 border border-gold/20 shadow-sm">
                       <Mail className="h-5 w-5" />
                     </div>
-                    <div>
+                    <div className="flex flex-col">
                       <h4 className="font-sans text-xs font-bold uppercase tracking-wider text-navy mb-1">
-                        Email Address
+                        Email Addresses
                       </h4>
                       <a
                         href="mailto:info@uhalegal.co.uk"
                         className="font-sans text-sm text-gray-500 hover:text-gold transition-colors duration-200"
                       >
                         info@uhalegal.co.uk
+                      </a>
+                      <a
+                        href="mailto:info@uhalegal.com"
+                        className="font-sans text-sm text-gray-500 hover:text-gold transition-colors duration-200 mt-0.5"
+                      >
+                        info@uhalegal.com
                       </a>
                     </div>
                   </div>
@@ -128,10 +132,10 @@ export default function Contact({ onNavigate, region }: ContactProps) {
                         Call Our Advisors
                       </h4>
                       <a
-                        href="tel:+442079460192"
+                        href="tel:+923073073070"
                         className="font-sans text-sm text-gray-500 hover:text-gold transition-colors duration-200 block"
                       >
-                        +44 (0) 20 7946 0192
+                        +92 307 307 307 0
                       </a>
                       <span className="font-sans text-[10px] text-gray-400 block mt-0.5">
                         Mon - Fri, 9:00 AM - 5:30 PM GMT
@@ -146,7 +150,7 @@ export default function Contact({ onNavigate, region }: ContactProps) {
                 <div className="flex items-start space-x-3 text-xs text-gray-400 bg-navy/5 p-4 border border-navy/5">
                   <ShieldAlert className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
                   <p className="leading-relaxed">
-                    <strong>Regulatory Notice:</strong> Uhalegal is a firm of registered practitioners regulated under SRA guidance. Professional liability insurance details are inspectable upon request.
+                    <strong>Regulatory Notice:</strong> Uhalegal is a firm of registered practitioners regulated under industry guidance. Professional liability insurance details are inspectable upon request.
                   </p>
                 </div>
 
@@ -176,7 +180,7 @@ export default function Contact({ onNavigate, region }: ContactProps) {
         </div>
       </section>
 
-      {/* Map placeholder: bg-navy/10 h-64 flex items-center justify-center — "London, United Kingdom" */}
+      {/* Map placeholder: bg-navy/10 h-64 flex items-center justify-center — "Manchester, United Kingdom" */}
       <section id="map-section" className="relative w-full h-80 bg-navy/10 border-t border-b border-navy/10 flex flex-col items-center justify-center p-8 text-center overflow-hidden">
         {/* Subtle decorative grid background for map vibe */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(26,26,46,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(26,26,46,0.02)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none" />
@@ -186,13 +190,13 @@ export default function Contact({ onNavigate, region }: ContactProps) {
             <MapPin className="h-5 w-5" />
           </div>
           <h3 className="font-serif text-2xl font-semibold text-navy mb-1">
-            London Office Location
+            Manchester Office Location
           </h3>
           <p className="font-sans text-sm font-medium text-gold-muted mb-4 uppercase tracking-wider">
-            London, United Kingdom
+            Manchester, United Kingdom
           </p>
           <p className="font-sans text-xs text-gray-500 max-w-sm leading-relaxed">
-            Conveniently located in St. James's, SW1Y. Near Green Park and Piccadilly Circus underground stations. Private client parking available by arrangement.
+            Conveniently located in Cheetham Hill, Manchester. Close to local transport links and easily accessible from the city centre. Private client parking available by arrangement.
           </p>
         </div>
       </section>

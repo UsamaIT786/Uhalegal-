@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import Logo from './Logo';
 
 interface NavbarProps {
   activePage: string;
   onNavigate: (page: string) => void;
+  onBackToOfficeSelection?: () => void;
 }
 
-export default function Navbar({ activePage, onNavigate }: NavbarProps) {
+export default function Navbar({ activePage, onNavigate, onBackToOfficeSelection }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -78,8 +79,21 @@ export default function Navbar({ activePage, onNavigate }: NavbarProps) {
           ))}
         </nav>
 
-        {/* CTA Button */}
-        <div className="hidden md:flex items-center">
+        {/* CTA Button & Office Selection */}
+        <div className="hidden md:flex items-center space-x-4">
+          {onBackToOfficeSelection && (
+            <button
+              onClick={onBackToOfficeSelection}
+              className={`flex items-center gap-1.5 px-4 py-2.5 font-sans text-xs font-semibold uppercase tracking-wider rounded-none border transition-all duration-200 cursor-pointer ${
+                isScrolled
+                  ? 'text-navy border-navy/20 hover:border-navy hover:bg-navy/5'
+                  : 'text-gray-300 border-white/20 hover:text-white hover:border-white hover:bg-white/5'
+              }`}
+            >
+              <Globe className="h-3.5 w-3.5" />
+              <span>Back to Office Selection</span>
+            </button>
+          )}
           <button
             onClick={() => handleLinkClick('contact')}
             className="px-5 py-2.5 font-sans text-xs font-semibold uppercase tracking-wider rounded-none transition-all duration-200 border cursor-pointer bg-gold text-navy border-gold hover:bg-gold-light hover:border-gold-light"
@@ -121,7 +135,21 @@ export default function Navbar({ activePage, onNavigate }: NavbarProps) {
                 {item.label}
               </button>
             ))}
-            <div className="pt-4 px-4">
+            {onBackToOfficeSelection && (
+              <div className="px-4">
+                <button
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    onBackToOfficeSelection();
+                  }}
+                  className="w-full py-3 bg-navy-light/40 border border-gold/30 text-gold font-sans text-xs font-semibold uppercase tracking-wider text-center rounded-none flex items-center justify-center gap-2 cursor-pointer hover:bg-navy-light/60 transition-all duration-200"
+                >
+                  <Globe className="h-4 w-4" />
+                  <span>Back to Office Selection</span>
+                </button>
+              </div>
+            )}
+            <div className="pt-2 px-4">
               <button
                 onClick={() => handleLinkClick('contact')}
                 className="w-full py-3 bg-gold text-navy font-sans text-xs font-semibold uppercase tracking-wider text-center rounded-none block cursor-pointer hover:bg-gold-light transition-all duration-200"

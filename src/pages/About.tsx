@@ -16,7 +16,7 @@ export default function About({ onNavigate, region }: AboutProps) {
     {
       number: '01',
       title: 'Integrity',
-      description: 'As SRA-regulated professionals, ethical conduct is our cornerstone. We present realistic assessments of success, establish absolute fee clarity from day one, and maintain total client confidentiality.',
+      description: 'As regulated professionals, ethical conduct is our cornerstone. We present realistic assessments of success, establish absolute fee clarity from day one, and maintain total client confidentiality.',
     },
     {
       number: '02',
@@ -109,7 +109,7 @@ export default function About({ onNavigate, region }: AboutProps) {
             >
               <img
                 src={aboutIntroImg}
-                alt={region === 'PK' ? "Uhalegal Established in Pakistan" : "Uhalegal Established London, UK"}
+                alt={region === 'PK' ? "Uhalegal Established in Pakistan" : "Uhalegal Established Manchester, UK"}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent pointer-events-none" />
@@ -118,7 +118,7 @@ export default function About({ onNavigate, region }: AboutProps) {
                   Uhalegal
                 </span>
                 <span className="font-sans text-[10px] font-bold uppercase tracking-widest text-gold block">
-                  {region === 'PK' ? "Established in Pakistan" : "Established London, UK"}
+                  {region === 'PK' ? "Established in Pakistan" : "Established Manchester, UK"}
                 </span>
               </div>
             </motion.div>
@@ -143,7 +143,7 @@ export default function About({ onNavigate, region }: AboutProps) {
                   : "Founded with a mission to simplify the complex landscape of UK immigration law, Uhalegal represents a standard of modern, direct, and results-driven legal advocacy. We specialize solely in immigration, allowing our legal scholars to possess unmatched depth in corporate sponsorship, family resettlement, and citizenship criteria."}
               </p>
               <p className="font-sans text-sm md:text-base text-gray-600 leading-relaxed">
-                We act as strategic partners to corporate clients seeking global talent, and caring guides for individuals reuniting with families. Our SRA-regulated status guarantees total regulatory accountability and adherence to the highest standards of professional ethics in the legal industry.
+                We act as strategic partners to corporate clients seeking global talent, and caring guides for individuals reuniting with families. Our regulated status guarantees total regulatory accountability and adherence to the highest standards of professional ethics in the legal industry.
               </p>
             </motion.div>
 
@@ -232,7 +232,7 @@ export default function About({ onNavigate, region }: AboutProps) {
                   </p>
                 </div>
                 <p className="font-sans text-xs text-gray-500 leading-relaxed pt-4 border-t border-gray-200/60 w-full">
-                  Specialist practitioner regulated under SRA guidance. Dedicated to delivering bespoke case management.
+                  Specialist practitioner regulated under industry guidance. Dedicated to delivering bespoke case management.
                 </p>
               </motion.div>
             ))}

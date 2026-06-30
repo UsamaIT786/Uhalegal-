@@ -14,7 +14,7 @@ interface HomeProps {
 }
 
 export default function Home({ onNavigate, region }: HomeProps) {
-  // 6 SRA Immigrations Categories tailored by region
+  // 6 Immigration Categories tailored by region
   const services: Service[] = region === 'PK' ? [
     {
       id: 'visit-visas',
@@ -47,7 +47,7 @@ export default function Home({ onNavigate, region }: HomeProps) {
     {
       id: 'sponsor-license',
       title: 'Sponsor Licenses',
-      description: 'Assisting Pakistan-owned and global businesses in securing SRA-compliant UK Sponsor Licenses to sponsor and hire international talent.',
+      description: 'Assisting Pakistan-owned and global businesses in securing compliant UK Sponsor Licenses to sponsor and hire international talent.',
       iconName: 'Building',
       subServices: ['Sponsor License Application', 'SMS Portal Compliance Support', 'Mock Audits & Key Personnel', 'Sponsorship Management training'],
     },
@@ -104,25 +104,26 @@ export default function Home({ onNavigate, region }: HomeProps) {
   ];
 
   // 3 Testimonials
+  // TODO: Flag for client approval before publishing final names
   const testimonials: Testimonial[] = [
     {
       id: '1',
-      name: 'Elena Rostova',
-      initials: 'ER',
+      name: 'Zainab Ahmed',
+      initials: 'ZA',
       visaType: 'Skilled Worker Visa',
-      quote: 'Uhalegal turned what seemed like a chaotic visa application process into a transparent, step-by-step roadmap. Their expertise was invaluable in securing my senior engineering role in London.',
+      quote: 'Uhalegal turned what seemed like a chaotic visa application process into a transparent, step-by-step roadmap. Their expertise was invaluable in securing my senior engineering role in Manchester.',
     },
     {
       id: '2',
-      name: 'Marcus Sterling',
-      initials: 'MS',
+      name: 'M. Ali Khan',
+      initials: 'MK',
       visaType: 'Sponsor Licence',
       quote: 'Our firm needed to sponsor senior staff urgently. The compliance counsel from Uhalegal was exceptional — our Sponsor Licence was approved in record time without a single requisition.',
     },
     {
       id: '3',
-      name: 'Amina & Liam Patel',
-      initials: 'AP',
+      name: 'Hamza Malik',
+      initials: 'HM',
       visaType: 'Spouse Visa Settlement',
       quote: 'Exceptional, compassionate, and highly professional. They guided us through the complex financial documentation required for the Spouse Visa and stayed with us until ILR approval.',
     },
@@ -191,7 +192,7 @@ export default function Home({ onNavigate, region }: HomeProps) {
                 Regulated Experts
               </h3>
               <p className="font-sans text-sm text-gray-500 leading-relaxed max-w-xs">
-                SRA-regulated solicitors providing legally sound guidance fully compliant with latest Home Office revisions.
+                Regulated experts providing legally sound guidance fully compliant with latest Home Office revisions.
               </p>
             </motion.div>
 
@@ -245,15 +246,13 @@ export default function Home({ onNavigate, region }: HomeProps) {
           
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-gold font-sans text-xs font-bold uppercase tracking-widest block mb-3">
-              {region === 'PK' ? 'Regional Excellence' : 'Domestic Excellence'}
+              Global Presence
             </span>
             <h2 className="font-serif text-3xl md:text-5xl font-semibold text-navy">
-              {region === 'PK' ? 'Pakistan Liaison Presence' : 'United Kingdom Office Presence'}
+              Our Global Offices
             </h2>
             <p className="font-sans text-sm md:text-base text-gray-500 mt-4 max-w-2xl mx-auto leading-relaxed">
-              {region === 'PK'
-                ? 'Operating liaison hubs in Islamabad and Lahore. We provide direct on-the-ground support, certified translations, notary services, and document coordination.'
-                : 'Operating a premium SRA-regulated legal practice in London. We provide expert advice, represent corporate clients, and secure family settlement paths.'}
+              Operating our main legal practice in Manchester and a dedicated client support office in Lahore, providing comprehensive representation and administrative oversight.
             </p>
             <div className="h-[2px] w-12 bg-gold mx-auto mt-6" />
           </div>
@@ -262,94 +261,92 @@ export default function Home({ onNavigate, region }: HomeProps) {
           <DualWavingFlags region={region} />
 
           {/* Detailed Operations Grid */}
-          <div className="max-w-2xl mx-auto mt-16">
-            {region === 'UK' ? (
-              /* United Kingdom Presence Card */
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                whileHover={{ y: -4 }}
-                className="bg-cream/40 border border-gray-200 p-8 hover:border-gold/30 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex items-center space-x-3 mb-6">
-                    <div className="h-10 w-10 bg-navy text-white flex items-center justify-center font-sans font-bold text-xs">
-                      UK
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-xl sm:text-2xl font-semibold text-navy">London Headquarters</h3>
-                      <p className="font-sans text-[11px] text-gold uppercase tracking-wider font-bold">St. James's, SW1A</p>
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-16">
+            {/* Card 1: Manchester Office */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ y: -4 }}
+              className="bg-cream/40 border border-gray-200 p-8 hover:border-gold/30 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group rounded-none"
+            >
+              <div>
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="h-10 w-10 bg-navy text-white flex items-center justify-center font-sans font-bold text-xs">
+                    UK
                   </div>
-                  <p className="font-sans text-sm text-gray-500 leading-relaxed mb-6">
-                    Our main London practice drives high-stakes appeals, complex spouse visa filings, and represents corporate clients directly before the Home Office and immigration tribunals.
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    <li className="flex items-start space-x-2 text-xs font-sans text-gray-600">
-                      <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                      <span>Direct Home Office submissions & priority routing support</span>
-                    </li>
-                    <li className="flex items-start space-x-2 text-xs font-sans text-gray-600">
-                      <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                      <span>SRA-regulated solicitor representation before Tribunals</span>
-                    </li>
-                    <li className="flex items-start space-x-2 text-xs font-sans text-gray-600">
-                      <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                      <span>Corporate Sponsor Licence compliance audits & mock checks</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="flex items-center text-xs font-sans font-semibold text-navy group-hover:text-gold transition-colors duration-200">
-                  <MapPin className="h-4 w-4 mr-1.5 text-gold" />
-                  <span>London SW1A, United Kingdom</span>
-                </div>
-              </motion.div>
-            ) : (
-              /* Pakistan Presence Card */
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                whileHover={{ y: -4 }}
-                className="bg-cream/40 border border-gray-200 p-8 hover:border-gold/30 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex items-center space-x-3 mb-6">
-                    <div className="h-10 w-10 bg-emerald-800 text-white flex items-center justify-center font-sans font-bold text-xs">
-                      PK
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-xl sm:text-2xl font-semibold text-navy">Pakistan Client Liaison</h3>
-                      <p className="font-sans text-[11px] text-gold uppercase tracking-wider font-bold">Islamabad & Lahore Hubs</p>
-                    </div>
+                  <div>
+                    <h3 className="font-serif text-xl sm:text-2xl font-semibold text-navy">Manchester Office</h3>
+                    <p className="font-sans text-[11px] text-gold uppercase tracking-wider font-bold">Cheetham Hill</p>
                   </div>
-                  <p className="font-sans text-sm text-gray-500 leading-relaxed mb-6">
-                    Providing local, on-the-ground administrative and documentation support for applicants in Pakistan, ensuring absolute verification and perfect layout before dispatch.
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    <li className="flex items-start space-x-2 text-xs font-sans text-gray-600">
-                      <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                      <span>Certified translation, notary, and local document verification</span>
-                    </li>
-                    <li className="flex items-start space-x-2 text-xs font-sans text-gray-600">
-                      <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                      <span>Tuberculosis (TB) clinic and biometric booking coordination</span>
-                    </li>
-                    <li className="flex items-start space-x-2 text-xs font-sans text-gray-600">
-                      <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                      <span>Secure end-to-end client communications and dossier preparation</span>
-                    </li>
-                  </ul>
                 </div>
-                <div className="flex items-center text-xs font-sans font-semibold text-navy group-hover:text-gold transition-colors duration-200">
-                  <MapPin className="h-4 w-4 mr-1.5 text-gold" />
-                  <span>Islamabad & Lahore, Pakistan</span>
+                <p className="font-sans text-sm text-gray-500 leading-relaxed mb-6">
+                  Cheetham Hill. Our main Manchester practice drives high-stakes appeals, complex spouse visa filings, and represents corporate clients directly before the Home Office and immigration tribunals.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start space-x-2 text-xs font-sans text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Direct Home Office submissions & priority routing support</span>
+                  </li>
+                  <li className="flex items-start space-x-2 text-xs font-sans text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Representation before Tribunals</span>
+                  </li>
+                  <li className="flex items-start space-x-2 text-xs font-sans text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Corporate Sponsor Licence compliance audits & mock checks</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex items-center text-xs font-sans font-semibold text-navy group-hover:text-gold transition-colors duration-200">
+                <MapPin className="h-4 w-4 mr-1.5 text-gold" />
+                <span>Manchester, United Kingdom</span>
+              </div>
+            </motion.div>
+
+            {/* Card 2: Lahore Office */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ y: -4 }}
+              className="bg-cream/40 border border-gray-200 p-8 hover:border-gold/30 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group rounded-none"
+            >
+              <div>
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="h-10 w-10 bg-emerald-800 text-white flex items-center justify-center font-sans font-bold text-xs">
+                    PK
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-xl sm:text-2xl font-semibold text-navy">Lahore Office</h3>
+                    <p className="font-sans text-[11px] text-gold uppercase tracking-wider font-bold">Gulberg</p>
+                  </div>
                 </div>
-              </motion.div>
-            )}
+                <p className="font-sans text-sm text-gray-500 leading-relaxed mb-6">
+                  Providing local, on-the-ground administrative and documentation support for applicants in Pakistan, ensuring absolute verification and perfect layout before UK dispatch.
+                </p>
+                <ul className="space-y-3 mb-8">
+                  <li className="flex items-start space-x-2 text-xs font-sans text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Certified translation, notary, and local document verification</span>
+                  </li>
+                  <li className="flex items-start space-x-2 text-xs font-sans text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Biometric booking coordination and in person consultation</span>
+                  </li>
+                  <li className="flex items-start space-x-2 text-xs font-sans text-gray-600">
+                    <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
+                    <span>Secure end-to-end client communications and dossier preparation</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex items-center text-xs font-sans font-semibold text-navy group-hover:text-gold transition-colors duration-200">
+                <MapPin className="h-4 w-4 mr-1.5 text-gold" />
+                <span>Lahore, Pakistan</span>
+              </div>
+            </motion.div>
           </div>
 
         </div>
