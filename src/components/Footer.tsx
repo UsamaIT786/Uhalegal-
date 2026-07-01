@@ -25,7 +25,7 @@ export default function Footer({ onNavigate, region }: FooterProps) {
               onClick={() => handleLinkClick('home')}
               className="flex items-start justify-start focus:outline-none cursor-pointer"
             >
-              <Logo light={true} sizeMultiplier={1.0} className="!items-start" />
+              <Logo light={true} sizeMultiplier={1.8} className="!items-start" />
             </button>
             <p className="text-gray-400 font-sans text-sm leading-relaxed max-w-sm">
               {region === 'PK'
@@ -145,37 +145,49 @@ export default function Footer({ onNavigate, region }: FooterProps) {
               Contact Info
             </h3>
             <ul className="space-y-3 font-sans text-sm text-gray-300">
-              <li className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 text-gold mt-1 flex-shrink-0" />
-                <div>
-                  <span className="font-semibold block text-xs uppercase text-gold">Manchester Office</span>
-                  <span>400 Cheetham Hill Road,<br />Manchester M9 8LE</span>
-                </div>
-              </li>
-              <li className="flex items-start space-x-2">
-                <MapPin className="h-4 w-4 text-gold mt-1 flex-shrink-0" />
-                <div>
-                  <span className="font-semibold block text-xs uppercase text-gold">Lahore Office</span>
-                  <span>508 High Q Tower, Jail Road,<br />Gulberg, Lahore</span>
-                </div>
-              </li>
-              <li className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-gold flex-shrink-0" />
-                <a href="tel:+923073073070" className="hover:text-gold transition-colors duration-200">
-                  +92 307 307 307 0
-                </a>
-              </li>
-              <li className="flex items-start space-x-2">
-                <Mail className="h-4 w-4 text-gold mt-1 flex-shrink-0" />
-                <div className="flex flex-col">
-                  <a href="mailto:info@uhalegal.co.uk" className="hover:text-gold transition-colors duration-200">
-                    info@uhalegal.co.uk
-                  </a>
-                  <a href="mailto:info@uhalegal.com" className="hover:text-gold transition-colors duration-200">
-                    info@uhalegal.com
-                  </a>
-                </div>
-              </li>
+              {region === 'UK' ? (
+                <>
+                  <li className="flex items-start space-x-2">
+                    <MapPin className="h-4 w-4 text-gold mt-1 flex-shrink-0" />
+                    <div>
+                      <span className="font-semibold block text-xs uppercase text-gold">Manchester Office</span>
+                      <span>400 Cheetham Hill Road,<br />Manchester M9 8LE</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <Mail className="h-4 w-4 text-gold mt-1 flex-shrink-0" />
+                    <div className="flex flex-col">
+                      <a href="mailto:info@uhalegal.co.uk" className="hover:text-gold transition-colors duration-200">
+                        info@uhalegal.co.uk
+                      </a>
+                    </div>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="flex items-start space-x-2">
+                    <MapPin className="h-4 w-4 text-gold mt-1 flex-shrink-0" />
+                    <div>
+                      <span className="font-semibold block text-xs uppercase text-gold">Lahore Office</span>
+                      <span>507 High Q Tower, Jail Road,<br />Gulberg, Lahore</span>
+                    </div>
+                  </li>
+                  <li className="flex items-center space-x-2">
+                    <Phone className="h-4 w-4 text-gold flex-shrink-0" />
+                    <a href="tel:+923073073070" className="hover:text-gold transition-colors duration-200">
+                      +92 307 307 307 0
+                    </a>
+                  </li>
+                  <li className="flex items-start space-x-2">
+                    <Mail className="h-4 w-4 text-gold mt-1 flex-shrink-0" />
+                    <div className="flex flex-col">
+                      <a href="mailto:info@uhalegal.com" className="hover:text-gold transition-colors duration-200">
+                        info@uhalegal.com
+                      </a>
+                    </div>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
 

@@ -78,14 +78,14 @@ export default function Preloader({ onComplete }: PreloaderProps) {
           </div>
 
           {/* Core Logo Container */}
-          <div className="relative h-20 w-20 flex items-center justify-center z-20">
+          <div className="relative h-28 w-28 flex items-center justify-center z-20">
             {/* Spinning decorative gold ring */}
             <div className="absolute inset-0 rounded-full border border-dashed border-gold/40 animate-[spin_10s_linear_infinite]" />
             {/* Glow Aura behind logo */}
-            <div className="absolute h-14 w-14 rounded-full bg-gold/15 blur-md animate-[pulse_2s_infinite]" />
+            <div className="absolute h-20 w-20 rounded-full bg-gold/15 blur-md animate-[pulse_2s_infinite]" />
             
             {/* White Logo Badge */}
-            <Logo sizeMultiplier={1.8} />
+            <Logo light={true} sizeMultiplier={1.8} />
           </div>
 
           {/* Right Flag: Pakistan */}

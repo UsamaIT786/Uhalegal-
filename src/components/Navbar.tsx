@@ -52,7 +52,7 @@ export default function Navbar({ activePage, onNavigate, onBackToOfficeSelection
           onClick={() => handleLinkClick('home')}
           className="flex items-center justify-center focus:outline-none cursor-pointer h-[54px] overflow-visible"
         >
-          <Logo light={!isScrolled} sizeMultiplier={1.6} />
+          <Logo light={!isScrolled} sizeMultiplier={isScrolled ? 1.2 : 1.7} />
         </button>
 
         {/* Desktop Navigation */}
